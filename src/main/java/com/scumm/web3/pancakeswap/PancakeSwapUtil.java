@@ -33,7 +33,7 @@ public class PancakeSwapUtil {
     private static String WBNB_ADDRESS;
 
     //BSC网络地址
-    private static String BSC_NET;
+    private static String NET_WORK;
 
     private static String PANCAKE_ROUTER;
     private static String PANCAKE_FACTORY;
@@ -58,7 +58,7 @@ public class PancakeSwapUtil {
             ZERO_ADDRESS = props.getProperty("ZERO_ADDRESS");
             WBNB_ADDRESS = props.getProperty("WBNB_ADDRESS");
 
-            BSC_NET = props.getProperty("BSC_NET");
+            NET_WORK = props.getProperty("NET_WORK");
 
             PANCAKE_ROUTER = props.getProperty("PANCAKE_ROUTER");
             PANCAKE_FACTORY = props.getProperty("PANCAKE_FACTORY");
@@ -87,7 +87,7 @@ public class PancakeSwapUtil {
             throw new Exception("fromToken can't equals toToken");
         }
 
-        Web3j web3j = Web3j.build(new org.web3j.protocol.http.HttpService(BSC_NET, new OkHttpClient.Builder().build(), false));
+        Web3j web3j = Web3j.build(new org.web3j.protocol.http.HttpService(NET_WORK, new OkHttpClient.Builder().build(), false));
 
         Credentials credentials = Credentials.create(privateKey);
         String own = credentials.getAddress();
